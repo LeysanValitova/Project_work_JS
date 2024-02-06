@@ -1,12 +1,17 @@
-@import 'normalize.css';
+// @import 'normalize.css';
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
 
 @import './pages.scss/index1';
 @import './pages.scss/catalog';
 @import './pages.scss/basket';
-
-
-.test {
-    width: 100px;
-    height: 200px;
-    background-color: black;
-}

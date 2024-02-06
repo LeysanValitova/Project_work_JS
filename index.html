@@ -4,10 +4,111 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MAROON</title>
-    <link rel="stylesheet" href="src/scss/pages.scss/_index1.scss" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
-    <div class="test"></div>
+    <header class="header">
+      <div class="nav__container">
+        <div class="nav__title">
+          <a href="#"><img src="/public/images/MAROON.svg" alt="Логотип" /></a>
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li>
+              <a href="#"
+                ><img src="/public/images/man.svg" alt="Мой профиль"
+              /></a>
+            </li>
+            <li>
+              <a href="#"><img src="/public/images/bag.svg" alt="Корзина" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <section class="natural_cosmetic">
+        <div class="facial_care">
+          <img src="/public/images/for_face.png" alt="Крема для лица" />
+        </div>
+        <div class="natural__cosmetic__description">
+          <div class="natural_cosmetic__title">MAROON</div>
+          <div class="natural_cosmetic__text">
+            Натуральная косметика <br />
+            для бережного ухода за кожей
+          </div>
+          <div class="details__btn">
+            <a href="#" class="transparent-button">Подробнее</a>
+          </div>
+        </div>
+        <div class="body_care">
+          <img src="/public/images/for_body.png" alt="Крема для тела" />
+        </div>
+      </section>
+    </header>
+    <!--  -->
+    <section class="bestsellers">
+      <div class="carousel">
+        <div class="bestsellers__description">
+          <div class="bestsellers__title">Бестселлеры</div>
+          <div class="bestsellers__text">
+            Легендарные продукты, завоевавшие любовь наших клиентов
+          </div>
+          <div class="details__btn">
+            <a href="#" class="transparent-button">Смотреть все</a>
+          </div>
+        </div>
+        <!--  -->
+        <div class="bestsellers__card bestsellers__card_1">
+          <div class="cartd__title">High</div>
+          <div class="card__subtitle">крем для лица</div>
+
+          <a class="more" href="#">Подробнее</a>
+        </div>
+        <!--  -->
+        <div class="bestsellers__card bestsellers__card_2">
+          <div class="cartd__title">Rest</div>
+          <div class="card__subtitle">минеральная пудра</div>
+
+          <a class="more" href="#">Подробнее</a>
+        </div>
+        <!--  -->
+        <div class="bestsellers__card bestsellers__card_3">
+          <div class="cartd__title">Rose</div>
+          <div class="card__subtitle">крем для лица</div>
+
+          <a class="more" href="#">Подробнее</a>
+        </div>
+        <!--  -->
+        <div class="bestsellers__card bestsellers__card_4">
+          <div class="cartd__title">Milk</div>
+          <div class="card__subtitle">масло для тела</div>
+
+          <a class="more" href="#">Подробнее</a>
+        </div>
+        <!--  -->
+        <!-- <div class="bestsellers__card bestsellers__card_5">
+          <div class="cartd__title">High</div>
+          <div class="card__subtitle">крем для лица</div>
+
+          <a class="more" href="#">Подробнее</a>
+        </div> -->
+      </div>
+
+      <div class="arrows-container">
+        <img class="arrow" src="/public/images/left.svg" alt="стрелка налево" />
+        <img
+          class="arrow"
+          src="/public/images/right.svg"
+          alt="стрелка направо"
+        />
+      </div>
+    </section>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

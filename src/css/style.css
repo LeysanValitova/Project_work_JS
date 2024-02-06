@@ -1,0 +1,211 @@
+@import url("../_variables.scss");
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "mplus1-medium";
+  src: url("/public/fonts/MPLUS1p-Medium.ttf");
+}
+@font-face {
+  font-family: "mplus1-regular";
+  src: url("/public/fonts/MPLUS1p-Regular.ttf");
+}
+@font-face {
+  font-family: "raleway-medium";
+  src: url("/public/fonts/Raleway-Medium.ttf");
+}
+html {
+  font-size: 18px;
+}
+
+header {
+  background-image: url("/public/images/header_bg.jpg");
+  height: 650px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  padding-top: 4vh;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 7vh 7.17vw 0 7.17vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1000;
+}
+
+.content {
+  height: 2000px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #122947;
+}
+
+.natural__cosmetic__description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: center;
+  width: 20.06vw;
+  margin: 0 3.51vw 0 3.51vw;
+}
+
+.natural_cosmetic {
+  display: flex;
+  flex-direction: row;
+  width: 75.4vw;
+  margin: 0 auto;
+  margin-top: 8.12vw;
+}
+.natural_cosmetic .natural_cosmetic__title {
+  font-family: "raleway-regular";
+  font-size: 3.2rem;
+  padding-top: 4.47vw;
+  z-index: 900;
+}
+.natural_cosmetic .natural_cosmetic__text {
+  font-family: "mplus1-regular";
+  width: 20.06vw;
+  text-align: center;
+  z-index: 800;
+}
+
+.transparent-button {
+  font-size: 0.9rem;
+  text-align: center;
+  padding-top: 5px;
+  font-family: "mplus1-medium";
+  background-color: transparent;
+  color: #122947;
+  border: 2px solid #B3BAC1;
+  width: 141px;
+  height: 37px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.transparent-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.bestsellers {
+  margin: 17vh 0 17vh 7.17vw;
+  color: #122947;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 2.2vw;
+}
+
+.bestsellers__description {
+  display: flex;
+  flex-direction: column;
+  color: #122947;
+  width: 15.67vw;
+  margin-right: 3.6vw;
+  padding-top: 6vh;
+}
+
+.bestsellers__title {
+  font-family: "raleway-medium";
+  font-size: 1.77rem;
+}
+
+.bestsellers__text {
+  font-family: "mplus1-regular";
+  margin-bottom: 4vh;
+  margin-top: 2.2vh;
+}
+
+.bestsellers__card {
+  width: 230px;
+  height: 312px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.bestsellers__card_1 {
+  background-image: url("/public/images/crem_1.png");
+}
+
+.bestsellers__card_2 {
+  background-image: url("/public/images/crem_2.png");
+}
+
+.bestsellers__card_3 {
+  background-image: url("/public/images/crem_3.png");
+}
+
+.bestsellers__card_4 {
+  background-image: url("/public/images/crem_4.png");
+}
+
+.cartd__title {
+  font-family: "raleway-medium";
+  font-size: 16px;
+}
+
+.card__subtitle {
+  font-family: "mplus1-regular";
+  font-size: 13px;
+  color: #9A9DA0;
+  margin: 5px 0 10px 0;
+}
+
+.more {
+  font-family: "mplus1-regular";
+  width: 70px;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 1px solid #111;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.arrows-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2.34vw;
+  margin: 2.5vh 10.17vw 0 0;
+}
+
+.arrow {
+  cursor: pointer;
+}
