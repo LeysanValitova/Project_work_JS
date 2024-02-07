@@ -53,7 +53,7 @@
     </header>
     <!--  -->
     <section class="bestsellers">
-      <div class="carousel">
+      <div class="carousel slider">
         <div class="bestsellers__description">
           <div class="bestsellers__title">Бестселлеры</div>
           <div class="bestsellers__text">
@@ -101,14 +101,148 @@
       </div>
 
       <div class="arrows-container">
-        <img class="arrow" src="/public/images/left.svg" alt="стрелка налево" />
         <img
           class="arrow"
+          id="next"
+          src="/public/images/left.svg"
+          alt="стрелка налево"
+        />
+        <img
+          class="arrow"
+          id="prev"
           src="/public/images/right.svg"
           alt="стрелка направо"
         />
       </div>
     </section>
-    <script type="module" src="/src/js/main.js"></script>
+
+    <!--  -->
+    <section class="spring">
+      <div class="spring__container">
+        <div class="spring__title">Встречайте весну вместе с нами</div>
+        <div class="spring__text">
+          Попробуйте новую коллекцию ухаживающих средств для лица с SPF защитой
+        </div>
+        <a href="#" class="transparent-button">Подробнее</a>
+      </div>
+    </section>
+    <!--  -->
+    <section class="personalized-care">
+      <div class="text-block">
+        <div class="text-block__title">Индивидуальный уход</div>
+        <div class="text-block__text">
+          <p class="text-block__text_first">
+            Не всегда очевидно, какие элементы и минералы необходимы коже, а
+            многочисленные эксперименты с разными средствами только ухудшают ее
+            качество.
+          </p>
+          <p class="text-block__text_second">
+            Заполните анкету, и мы подберем уход, подходящий именно вам,
+            учитывая ваш образ жизни, место жительства и другие факторы.
+          </p>
+        </div>
+        <a href="#" class="transparent-button anketa_btn">Заполнить анкету</a>
+      </div>
+      <div class="image-block">
+        <img src="/public/images/pers-care.png" alt="Картинка" />
+      </div>
+    </section>
+    <!--  -->
+    <section class="our-history">
+      <div class="history__text">
+        <p>
+          “Мы стремимся сделать уход за кожей доступным и приятным ритуалом для
+          всех, кто хочет заботиться о себе и своем теле”
+        </p>
+      </div>
+      <a href="#" class="transparent-button">Подробнее</a>
+    </section>
+    <!--  -->
+
+    <section class="contacts">
+      <div class="contacts__description">
+        <div class="contacts__title">Контакты</div>
+        <div class="address__container">
+          <div class="address__title">Адрес</div>
+          <div class="address__text">
+            Санкт-Петербург, ул. Большая Конюшенная, 19
+          </div>
+        </div>
+        <div class="phone__container">
+          <div class="telephone__title">Телефон</div>
+          <div class="telephone__number">+7 (923) 888-90-60</div>
+        </div>
+        <div class="email__container">
+          <div class="email__title">E-mail</div>
+          <div class="email__address">info@maroon.ru</div>
+        </div>
+
+        <div class="social-media__container">
+          <img
+            class="social-media__icon"
+            src="/public/images/fb.svg"
+            alt="фэйсбук"
+          />
+          <img
+            class="social-media__icon"
+            src="/public/images/ingm.svg"
+            alt="иконка инстаграма"
+          />
+          <img
+            class="social-media__icon"
+            src="/public/images/twtr.svg"
+            alt="иконка твиттер"
+          />
+        </div>
+      </div>
+
+      <!--  -->
+      <div id="map" class="map__container"></div>
+    </section>
+    <!--  -->
+    <footer class="footer">
+      <div class="footer__line">
+        <div class="footer__container">
+          <div class="footer-nav__container">
+            <div class="footer-nav__title">
+              <a href="#"
+                ><img src="/public/images/MAROON.svg" alt="Логотип" />
+              </a>
+            </div>
+            <ul class="footer_list">
+              <li><a class="footer-a" href="#">Каталог</a></li>
+              <li><a class="footer-a" href="#">О нас</a></li>
+              <li><a class="footer-a" href="#">Магазины</a></li>
+              <li><a class="footer-a" href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="social-media">
+            <img
+              class="social-media__icon"
+              src="/public/images/fb.svg"
+              alt="фэйсбук"
+            />
+            <img
+              class="social-media__icon"
+              src="/public/images/ingm.svg"
+              alt="иконка инстаграма"
+            />
+            <img
+              class="social-media__icon"
+              src="/public/images/twtr.svg"
+              alt="иконка твиттер"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="inform-container">
+        <div class="company">Maroon &copy 2020 Все права защищены</div>
+        <a href="#" class="politic_conf">Политика конфиденциальности</a>
+      </div>
+    </footer>
+    <!--  -->
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=53af7210-735a-4eb7-9c7b-d1e8805991bc&lang=ru_RU"></script>
+    <script src="/src/js/main.js"></script>
   </body>
 </html>

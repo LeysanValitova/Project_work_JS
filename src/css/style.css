@@ -209,3 +209,219 @@ a {
 .arrow {
   cursor: pointer;
 }
+
+.spring {
+  display: flex;
+  justify-content: right;
+  background-image: url("/public/images/spring__bg.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  align-items: center;
+}
+
+.spring__container {
+  margin: 0 20.7vw 0 0;
+}
+
+.spring__title {
+  font-family: "raleway-medium";
+  font-size: 1.7rem;
+  width: 20.28vw;
+}
+
+.spring__text {
+  font-family: "mplus1-regular";
+  width: 20.79vw;
+  margin: 2.5vh 0 4.3vh 0;
+}
+
+.personalized-care {
+  width: 85.65vw;
+  margin: 0 auto;
+  margin-top: 18vh;
+  margin-bottom: 18vh;
+  position: relative;
+}
+
+.text-block {
+  background-color: #F4F1ED;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  justify-content: center;
+  padding: 13vh 0 13vh 7.32vw;
+  width: 49.05vw;
+  z-index: 3;
+}
+
+.text-block__title {
+  font-family: "raleway-medium";
+  font-size: 1.7rem;
+}
+
+.text-block__text {
+  font-family: "mplus1-regular";
+  width: 24.08vw;
+  line-height: 26.1px;
+  margin-bottom: 4vh;
+}
+
+.text-block__text_first {
+  margin-bottom: 2vh;
+}
+
+.anketa_btn {
+  width: 200px;
+}
+
+.image-block {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-10%);
+  z-index: 4;
+}
+
+.contacts {
+  width: 85.65vw;
+  margin: 0 auto;
+  position: relative;
+}
+
+.contacts__description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #F4F1ED;
+  width: 49.05vw;
+  padding: 100px 0 100px 100px;
+  z-index: 1;
+}
+
+.contacts__title {
+  font-family: "raleway-medium";
+  font-size: 1.7rem;
+}
+
+.address__title, .telephone__title, .email__title {
+  font-family: "mplus1-medium";
+}
+
+.address__text, .telephone__number, .email__address {
+  font-family: "mplus1-regular";
+}
+
+.address__text {
+  width: 256px;
+}
+
+.address__container, .phone__container, .email__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social-media__container {
+  display: flex;
+  gap: 30px;
+}
+
+.map__container {
+  width: 49.05vw;
+  height: 422px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-10%);
+  z-index: 2;
+}
+
+.our-history {
+  background-image: url("/public/images/history.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 433px;
+  margin-bottom: 15vh;
+  display: flex;
+  flex-direction: column;
+  gap: 7vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.history__text {
+  font-family: "raleway-medium";
+  font-size: 1.7rem;
+  width: 55.7vw;
+}
+
+footer {
+  background-color: #F4F1ED;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: row;
+  width: 85.65vw;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-top: 18vh;
+  padding: 4.39vw 0 4.39vw 0;
+}
+
+.footer__line {
+  width: 100%;
+  border-bottom: 1px solid #D1D1D1;
+}
+
+.footer-nav__container {
+  display: flex;
+  flex-direction: row;
+  gap: 5.05vw;
+}
+
+.social-media {
+  display: flex;
+  gap: 30px;
+}
+
+.footer_list {
+  display: flex;
+  gap: 2.93vw;
+}
+
+.inform-container {
+  width: 85.65vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 20px 0;
+  color: #959595;
+  font-family: "mplus-regular";
+  font-size: 12px;
+}
+
+.politic_conf {
+  color: #959595;
+  font-family: "mplus-regular";
+  font-size: 12px;
+}
+
+.social-media__icon {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.social-media__icon:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+li:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+}
