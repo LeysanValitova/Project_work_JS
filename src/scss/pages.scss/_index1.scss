@@ -28,6 +28,48 @@ header {
     padding-top: 4vh;
 }
 
+.header__burger-btn {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: rgba(214, 214, 214, 0);
+    padding-top: 4.5vh;
+
+}
+
+.header__burger-btn span {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #111;
+    left: 8px;
+    transition: transform .5s, background-color .5s;
+}
+
+.header__burger-btn span:nth-child(1) {
+    transform: translateY(-8px);
+}
+
+
+.header__burger-btn span:nth-child(3) {
+    transform: translateY(8px);
+}
+
+.header.open .header__burger-btn span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.header.open .header__burger-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.open .header__burger-btn span:nth-child(3) {
+    transform: translateY(0)  rotate(-45deg);
+
+}
+
 .nav__container {
     display: flex;
     justify-content: space-between;
@@ -64,6 +106,74 @@ header {
         color: #122947;
     }
 
+    .profile-icons__wrapper{
+        display: flex;
+        flex-direction: row;
+        gap: 3vw;
+    }
+
+    .box {
+        display: flex;
+        gap: 3vw;
+
+    }
+
+    li:hover {
+        transform: scale(1.2);
+        transition: .5s;
+    }
+
+    @media (max-width: 960px) {
+        .header__burger-btn {
+            display: block;
+            z-index: 2;
+            transform: translateY(-20px);
+        }
+    
+        // .header__title-box_for-media {
+        //     position: absolute;
+        //     left: 0;
+        //     right: 0;
+        //     background-color: rgba(214, 214, 214, 0.19);
+        //     display: flex;
+    
+        // }
+    
+        .header__nav {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #f4f3ef;
+            padding: 100px 20px 8.17vw 7.17vw;
+            width: 300px;
+            left: -300px;
+            transition: transform .5s;
+        }
+
+        .header.open .header__nav {
+            transform: translateX(100%);
+        } 
+    
+    
+        .nav__title {
+            text-align: center;
+        }
+        .header__list {
+            display: block;
+        }
+    
+        .header__link {
+            font-size: 28px;
+            display: block;
+            padding: 20px 0;
+        }
+    
+        li:hover {
+            transform: none;
+        }
+
+    }
+
 
 .natural__cosmetic__description{
 display: flex;
@@ -83,7 +193,8 @@ margin: 0 3.51vw 0 3.51vw;
 
 
     .natural_cosmetic__title {
-        font-family: 'raleway-regular';
+        font-family: 'raleway-medium';
+        color: #122947;
         font-size: 3.2rem;
         padding-top: 4.47vw;
         z-index: 900;
@@ -429,10 +540,109 @@ footer{
     transition: .5s;
 }
 
-li:hover {
-    transform: scale(1.2);
-    transition: .5s;
+.modal-title-2 {
+    text-align: center;
+    font-family: 'raleway-medium';
+    padding: 2vh 5vw;
 }
+
+.btn-close-2 {
+    transform: translateY(-35px);
+}
+
+// 
+.modal_bodyy{
+    font-family: Arial, sans-serif;
+    color: #666;
+    
+}
+
+
+
+form {
+    background-color: #f1ebe5;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+.skin-problems {
+    display: block;
+}
+
+.input__label {
+    margin-top: 4vh;
+}
+
+.btn-p {
+    background-color:#e8ded5;
+}
+
+.btn-p:hover {
+    background-color: #dacec4;
+}
+
+.error .input-field {
+    border-color:  red;
+  }
+
+  .error-label {
+    color: red;
+    display: block;
+    margin-bottom: 15px;
+    align-self:last baseline;
+  }
+
+  .btn-s {
+    margin: 4vh 0;
+    background-color:#EFCDB8;
+  }
+
+  #registrationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+  }
+
+  .input-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-box label {
+    font-size: .8rem;
+  }
+
+  .r-form_title {
+    font-family: 'raleway-medium';
+    width: 10px;
+    margin: 0 auto;
+  }
+
+
+
+
+
+
+
+
 
 
 

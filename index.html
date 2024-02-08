@@ -4,32 +4,157 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MAROON</title>
-    <link rel="stylesheet" href="src/css/style.css" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="src/css/style.css" />
   </head>
   <body>
+    <!-- Модальное окно -->
+    <div class="modal" id="signUpModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title r-form_title">АВТОРИЗАЦИЯ</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Закрыть"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Форма регистрации начало -->
+            <form id="registrationForm">
+              <div class="input-box">
+                <label class="registrationForm" for="lastName"
+                  >* Фамилия:</label
+                >
+                <input
+                  data-required="true"
+                  class="input-field"
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <label for="firstName">* Имя:</label>
+                <input
+                  data-required="true"
+                  class="input-field"
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                />
+              </div>
+              <div class="input-box">
+                <label for="middleName">* Отчество:</label>
+                <input
+                  data-required="true"
+                  class="input-field"
+                  type="text"
+                  id="middleName"
+                  name="middleName"
+                />
+              </div>
+              <div class="input-box">
+                <label for="email">* Почтовый адрес:</label>
+                <input
+                  class="input-field"
+                  type="email"
+                  id="email"
+                  name="email"
+                  data-required="true"
+                />
+              </div>
+              <div class="input-box">
+                <label for="username">* Логин:</label>
+                <input
+                  data-required="true"
+                  data-max-Length="17"
+                  data-min-Length="7"
+                  class="input-field"
+                  type="text"
+                  id="username"
+                  name="username"
+                />
+              </div>
+              <div class="input-box">
+                <label for="password">* Пароль:</label>
+                <input
+                  class="input-field"
+                  type="password"
+                  id="password"
+                  name="password"
+                />
+              </div>
+              <div class="input-box">
+                <label for="confirmPassword">* Повторите пароль:</label>
+                <input
+                  class="input-field"
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  required
+                />
+              </div>
+              <button class="btn btn-s" type="submit">
+                Зарегистрироваться
+              </button>
+            </form>
+            <!-- Форма регистрации конец -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Закрыть
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Конец модального окна -->
+
     <header class="header">
       <div class="nav__container">
+        <button class="header__burger-btn" id="burger-btn">
+          <span></span><span></span><span></span>
+        </button>
+        <!-- <div class="header__title-box_for-media"> -->
         <div class="nav__title">
           <a href="#"><img src="/public/images/MAROON.svg" alt="Логотип" /></a>
         </div>
-        <div class="nav">
-          <ul>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li>
-              <a href="#"
-                ><img src="/public/images/man.svg" alt="Мой профиль"
-              /></a>
-            </li>
-            <li>
-              <a href="#"><img src="/public/images/bag.svg" alt="Корзина" /></a>
-            </li>
-          </ul>
+
+        <div class="box">
+          <div class="header__nav">
+            <ul class="header__list">
+              <li><a class="header__link" href="#">Каталог</a></li>
+              <li><a class="header__link" href="#">О нас</a></li>
+              <li><a class="header__link" href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="profile-icons__wrapper">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#signUpModal"
+              ><img
+                class="social-media__icon"
+                src="/public/images/man.svg"
+                alt="Мой профиль"
+            /></a>
+
+            <a href="#"
+              ><img
+                class="social-media__icon"
+                src="/public/images/bag.svg"
+                alt="Корзина"
+            /></a>
+          </div>
+          <!-- </div> -->
         </div>
       </div>
       <section class="natural_cosmetic">
@@ -53,7 +178,7 @@
     </header>
     <!--  -->
     <section class="bestsellers">
-      <div class="carousel slider">
+      <div class="carousel">
         <div class="bestsellers__description">
           <div class="bestsellers__title">Бестселлеры</div>
           <div class="bestsellers__text">
@@ -64,6 +189,8 @@
           </div>
         </div>
         <!--  -->
+        <!-- <div class="swiper">
+          <div class="swiper-wrapper"> -->
         <div class="bestsellers__card bestsellers__card_1">
           <div class="cartd__title">High</div>
           <div class="card__subtitle">крем для лица</div>
@@ -97,6 +224,8 @@
           <div class="card__subtitle">крем для лица</div>
 
           <a class="more" href="#">Подробнее</a>
+        </div> -->
+        <!-- </div>
         </div> -->
       </div>
 
@@ -141,8 +270,98 @@
             учитывая ваш образ жизни, место жительства и другие факторы.
           </p>
         </div>
-        <a href="#" class="transparent-button anketa_btn">Заполнить анкету</a>
+        <a
+          href="#"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          class="transparent-button anketa_btn"
+        >
+          Заполнить анкету
+        </a>
       </div>
+
+      <!-- Модальное окно -->
+      <div
+        class="modal fade modal_bodyy"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title modal-title-2 fs-5" id="exampleModalLabel">
+                Анкета для подбора индивидуального ухода
+              </h1>
+              <button
+                type="button"
+                class="btn-close btn-close-2"
+                data-bs-dismiss="modal"
+                aria-label="Закрыть"
+              ></button>
+            </div>
+            <!--  -->
+            <div class="modal-body">
+              <form>
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label class="input__label" for="skinType"
+                  >Выберите тип вашей кожи:</label
+                >
+                <select id="skinType" name="skinType" required>
+                  <option value="">-- Выберите тип кожи --</option>
+                  <option value="Сухая">Сухая</option>
+                  <option value="Жирная">Жирная</option>
+                  <option value="Комбинированная">Комбинированная</option>
+                  <option value="Нормальная">Нормальная</option>
+                </select>
+
+                <label class="input__label"
+                  >Какие проблемы с кожей вас беспокоят?</label
+                >
+                <div class="skin-problems">
+                  <div>
+                    <input type="checkbox" name="problems" value="Сухость" />
+                    Сухость
+                  </div>
+                  <div>
+                    <input type="checkbox" name="problems" value="Жирность" />
+                    Жирность
+                  </div>
+                  <div>
+                    <input type="checkbox" name="problems" value="Акне" /> Акне
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="problems"
+                      value="Пигментация"
+                    />
+                    Пигментация
+                  </div>
+                </div>
+              </form>
+              <!--  -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Закрыть
+              </button>
+              <button type="button" class="btn btn-p">
+                Сохранить изменения
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
       <div class="image-block">
         <img src="/public/images/pers-care.png" alt="Картинка" />
       </div>
@@ -241,7 +460,16 @@
       </div>
     </footer>
     <!--  -->
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=53af7210-735a-4eb7-9c7b-d1e8805991bc&lang=ru_RU"></script>
     <script src="/src/js/main.js"></script>
   </body>
