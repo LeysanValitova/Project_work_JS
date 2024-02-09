@@ -1,3 +1,5 @@
+
+
 // яндекс карты
 let center = [59.93863106417265,30.323036499999905];
 
@@ -39,6 +41,8 @@ window.addEventListener('DOMContentLoaded', function() {
 	this.document.getElementById('burger-btn').addEventListener('click', function() {
 		document.querySelector('header').classList.toggle('open')
 	})
+
+    
 })
 // 
 
@@ -112,38 +116,81 @@ document.getElementById("registrationForm").addEventListener("submit", function(
 	event.preventDefault()
 	if (validation(this) == true) {
 		// отправка формы на сервер
-				// let form = document.getElementById('registrationForm');
+				let form = document.getElementById('registrationForm');
+    let formData = new FormData(form);
 
-				fetch('https://jsonplaceholder.typicode.com/users', {
-			method: 'POST',
-				body: JSON.stringify({
-					title: 'foo',
-					body: 'bar',
-					userId: 1,
-				}),
-				headers: {
-					'Content-type': 'application/json; charset=UTF-8',
-				},
-				})
-				.then(response => {
-				if (response.ok) {
-					return response.json();
-				} else {
-					throw new Error('Произошла ошибка при отправке данных');
-				}
-				})
-				.then(data => {
-				console.log('Данные успешно отправлены:', data);
-				})
-				.catch(error => {
-				console.error('Произошла ошибка:', error);
-				});
-			
+    fetch('https://example.com/api/register', {
+    method: 'POST',
+    body: formData
+    })
+    .then(response => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw new Error('Произошла ошибка при отправке данных');
+    }
+    })
+    .then(data => {
+    console.log('Данные успешно отправлены:', data);
+    })
+    .catch(error => {
+    console.error('Произошла ошибка:', error);
+    });
 }
 })
 
 
-// .then((response) => response.json())
-// .then((json) => console.log(json));
+// // Показать модальное окно только 1 раз при входе на сайт
+// function showModal() {
+//     let popup = document.getElementById('popup');
+// popup.classList.add('open_popup');
+// }
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+
+// let isModalShown = localStorage.getItem('isModalShown');
+
+// if (!isModalShown) {
+//     setTimeout(function() {
+        
+//         showModal()
+//         localStorage.setItem('isModalShown', true);
+//     }, 15000)
+// }
+// });
+
+// Закрывать модальное окно при клике на крестик
+document.getElementById('popupClose').addEventListener('click', function() {
+    let popup = document.getElementById('popup');
+popup.classList.remove('open_popup');
+})
+// Закрывать модальное окно при клике на клавишу esc
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        let popup = document.getElementById('popup');
+        popup.classList.remove('open_popup');
+    }
+})
+// Закрывать модальное окно при клике вне него
+
+// document.querySelector('#popup','.popup__box').addEventListener('click', event => {
+//     event._isClickWidthInModal = true;
+// });
+// document.querySelector('#popup').addEventListener('click', event => {
+// if (event._isClickWidthInModal) return;
+// event.currentTarget.classList.remove('open_popup');
+// })
+
+// Закрывать модальное окно при клике на кноаку добавить адрес
+document.getElementById('addAddress').addEventListener('click', function() {
+    let popup = document.getElementById('popup');
+popup.classList.remove('open_popup');
+})
+
+
+
 
 
