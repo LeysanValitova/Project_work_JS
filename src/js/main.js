@@ -191,6 +191,16 @@ popup.classList.remove('open_popup');
 })
 
 
+// карусель
+document.getElementById('next').addEventListener('click', function() {
+    document.querySelector('#slider').style.transform += 'translateX(-100%)';
+  });
+
+  document.getElementById('prev').addEventListener('click', function() {
+    document.querySelector('#slider').style.transform += 'translateX(100%)';
+  });
+
+
 
 
 
