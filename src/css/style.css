@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("../_variables.scss");
 html {
   box-sizing: border-box;
@@ -683,4 +684,164 @@ select {
 .add-address:hover {
   transform: scale(1.04);
   transition: 0.5s;
+}
+
+.nav_border-bottom {
+  padding-top: 12vh;
+  border-bottom: 1px solid rgb(219, 220, 224);
+}
+
+.cards {
+  padding: 30px 0 17vh 0;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.cards__header {
+  width: 100%;
+  max-width: 1170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.cards__title {
+  font-family: "raleway-medium";
+  font-size: 53px;
+}
+
+.cards__filter-btn {
+  width: 141px;
+  height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF;
+  color: #122947;
+  border-radius: 4px;
+  border: 1px solid #B3BAC1;
+  transition: 0.4s;
+}
+
+.cards__filter-btn:hover {
+  color: #fff;
+  background-color: #122947;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.cards__filter-btn:active {
+  background-color: #FFF;
+  color: #122947;
+  transition: 0.4s;
+}
+
+.container__cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 270px);
+  justify-content: center;
+  justify-items: center;
+  gap: 2vw;
+  margin: 0 auto;
+}
+
+.card {
+  width: 270px;
+  min-height: 350px;
+  border: 1px solid #DBDCE0;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  position: relative;
+  transition: 0.2s;
+}
+
+.card:hover {
+  box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.1);
+}
+
+.card__top {
+  position: relative;
+  flex: 0 0 270px;
+  overflow: hidden;
+}
+
+.card__img {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.card__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: 0.2s;
+}
+.card__img img:hover {
+  transform: scale(1.1);
+}
+
+.card__bottom {
+  flex: 1 0 auto;
+  background-color: f4f3ef;
+  padding: 10px;
+}
+
+.card__inform {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__btn {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  color: #122947;
+  border: 2px solid #122947;
+  height: 30px;
+  border-radius: 5px;
+  font-family: "raleway-medium";
+  font-weight: 500;
+  transition: 0.4s;
+}
+
+.card__btn:hover {
+  background-color: #122947;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.card__btn:active {
+  color: #122947;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.card__price::after {
+  content: "₽";
+  margin-left: 4px;
+}
+
+.card__subtitlee, .card__volume {
+  font-family: "mplus1-regular";
+  color: #9A9DA0;
+  font-size: 13px;
+}
+
+.card__titlee {
+  font-family: "raleway-medium";
+  font-size: 16px;
+}
+
+.card__subtitlee {
+  font-family: "mplus1-medium";
+  font-size: 13px;
 }
