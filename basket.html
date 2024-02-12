@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Корзина</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <!-- Шапка начало -->
+    <div class="nav__container">
+      <button class="header__burger-btn" id="burger-btn">
+        <span></span><span></span><span></span>
+      </button>
+      <!-- <div class="header__title-box_for-media"> -->
+      <div class="nav__title">
+        <a href="/index.html"
+          ><img src="/public/images/MAROON.svg" alt="Логотип"
+        /></a>
+      </div>
+
+      <div class="box">
+        <div class="header__nav">
+          <ul class="header__list">
+            <li><a class="header__link" href="/catalog.html">Каталог</a></li>
+            <li><a class="header__link" href="#">О нас</a></li>
+            <li><a class="header__link" href="#">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="profile-icons__wrapper">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#signUpModal"
+            ><img
+              class="social-media__icon"
+              src="/public/images/man.svg"
+              alt="Мой профиль"
+          /></a>
+
+          <a href="#"
+            ><img
+              class="social-media__icon"
+              src="/public/images/bag.svg"
+              alt="Корзина"
+          /></a>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+    <!-- Шапка конец -->
+    <!-- Линия под шапкой начало -->
+    <div class="nav_border-bottom"></div>
+    <!-- Линия под шапкой конец -->
+
+    <section class="basket">
+      <div class="basket__container">
+        <div class="basket__title">Корзина</div>
+        <div class="product__list">
+          <!-- <div class="basket__header">
+            <div class="product__list_header">Продукт</div>
+            <div class="product__list-quantity">Количество</div>
+            <div class="product__list_price">Цена</div>
+            <div></div>
+          </div> -->
+          <div class="product">
+            <div class="product__inform">
+              <!-- <div class="product__img"> -->
+              <a class="product__img" href="#"
+                ><img src="/public/images/Rectangle44.png" alt="product"
+              /></a>
+              <!-- </div> -->
+              <div class="product__title-wrapper">
+                <a href="#" class="product__title">Увлажняющий крем</a>
+                <div class="product__subtitle">Для сухой кожи</div>
+              </div>
+            </div>
+            <div class="product__quantity-wrapper">
+              <button class="product__remouve-btn">
+                <i class="fa-solid fa-minus fa-lg"></i>
+              </button>
+              <div class="product__quantity">1</div>
+              <button class="product__add-btn">
+                <i class="fa-solid fa-plus fa-lg"></i>
+              </button>
+            </div>
+            <div class="product__price">45</div>
+
+            <button class="product__delete-btn">
+              <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+          </div>
+          <!--  -->
+          <div class="product">
+            <div class="product__inform">
+              <!-- <div class="product__img"> -->
+              <a class="product__img" href="#"
+                ><img src="/public/images/Rectangle45.png" alt="product"
+              /></a>
+              <!-- </div> -->
+              <div class="product__title-wrapper">
+                <a href="#" class="product__title">Увлажняющий крем</a>
+                <div class="product__subtitle">Для сухой кожи</div>
+              </div>
+            </div>
+            <div class="product__quantity-wrapper">
+              <button class="product__remouve-btn">
+                <i class="fa-solid fa-minus fa-lg"></i>
+              </button>
+              <div class="product__quantity">1</div>
+              <button class="product__add-btn">
+                <i class="fa-solid fa-plus fa-lg"></i>
+              </button>
+            </div>
+            <div class="product__price">45</div>
+
+            <button class="product__delete-btn">
+              <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+          </div>
+          <!--  -->
+        </div>
+        <div class="basket__footer">
+          <a class="basket__link" href="#">Вернуться к покупкам</a>
+          <div class="subtotal-wrapper">
+            <div class="subtotal">50</div>
+            <button class="order-btn">Заказать</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer начало -->
+    <footer class="footer">
+      <div class="footer__line">
+        <div class="footer__container">
+          <div class="footer-nav__container">
+            <div class="footer-nav__title">
+              <a href="#"
+                ><img src="/public/images/MAROON.svg" alt="Логотип" />
+              </a>
+            </div>
+            <ul class="footer_list">
+              <li><a class="footer-a" href="#">Каталог</a></li>
+              <li><a class="footer-a" href="#">О нас</a></li>
+              <li><a class="footer-a" href="#">Магазины</a></li>
+              <li><a class="footer-a" href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="social-media">
+            <img
+              class="social-media__icon"
+              src="/public/images/fb.svg"
+              alt="фэйсбук"
+            />
+            <img
+              class="social-media__icon"
+              src="/public/images/ingm.svg"
+              alt="иконка инстаграма"
+            />
+            <img
+              class="social-media__icon"
+              src="/public/images/twtr.svg"
+              alt="иконка твиттер"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="inform-container">
+        <div class="company">Maroon &copy 2020 Все права защищены</div>
+        <a href="#" class="politic_conf">Политика конфиденциальности</a>
+      </div>
+    </footer>
+    <!-- Footer конец -->
+    <script
+      src="https://kit.fontawesome.com/104ba3ab13.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -686,6 +686,18 @@ select {
   transition: 0.5s;
 }
 
+@font-face {
+  font-family: "mplus1-medium";
+  src: url("/public/fonts/MPLUS1p-Medium.ttf");
+}
+@font-face {
+  font-family: "mplus1-regular";
+  src: url("/public/fonts/MPLUS1p-Regular.ttf");
+}
+@font-face {
+  font-family: "raleway-medium";
+  src: url("/public/fonts/Raleway-Medium.ttf");
+}
 .nav_border-bottom {
   padding-top: 12vh;
   border-bottom: 1px solid rgb(219, 220, 224);
@@ -785,6 +797,7 @@ select {
 }
 .card__img img:hover {
   transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .card__bottom {
@@ -844,4 +857,228 @@ select {
 .card__subtitlee {
   font-family: "mplus1-medium";
   font-size: 13px;
+}
+
+@font-face {
+  font-family: "mplus1-medium";
+  src: url("/public/fonts/MPLUS1p-Medium.ttf");
+}
+@font-face {
+  font-family: "mplus1-regular";
+  src: url("/public/fonts/MPLUS1p-Regular.ttf");
+}
+@font-face {
+  font-family: "raleway-medium";
+  src: url("/public/fonts/Raleway-Medium.ttf");
+}
+.basket__container {
+  margin: 12vh 0;
+  border: 2px solid #D1D1D1;
+}
+
+.basket {
+  margin-top: 11vh;
+}
+
+.basket__container {
+  width: 1000px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5vh 7vw;
+}
+
+.basket__title {
+  display: block;
+  font-family: "raleway-medium";
+  font-size: 36px;
+  color: #122947;
+  padding-bottom: 4vh;
+}
+
+.basket__header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "mplus1-medium";
+  color: #B3BAC1;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+
+.product__list_header {
+  flex: 2;
+}
+
+.product__list-quantity {
+  flex: 1;
+}
+
+.product__list_price {
+  flex: 1;
+}
+
+.product {
+  padding: 2vh 0 4vh 0;
+  border-top: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product__inform {
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+}
+
+.product__img {
+  width: 120px;
+  height: 145px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.product__img img {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.product__img img:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+
+.product__title {
+  font-family: "raleway-medium";
+  font-size: 0.9rem;
+  color: #122947;
+  transition: 0.3s;
+}
+
+.product__subtitle {
+  font-family: "mplus1-regular";
+  font-size: 14px;
+  color: grey;
+}
+
+.product__quantity-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.product__remouve-btn, .product__add-btn {
+  border: none;
+  background-color: transparent;
+  height: 20px;
+  transition: 0.3s;
+}
+
+.product__price, .product__quantity {
+  font-size: 0.9rem;
+  color: #122947;
+  font-family: "mplus1-regular";
+}
+
+.product__price::after {
+  content: "₽";
+  margin-left: 4px;
+  font-size: 1rem;
+}
+
+.product__delete-btn {
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  transition: 0.3s;
+  border: none;
+  align-self: flex-start;
+}
+
+.product__delete-btn:hover, .product__remouve-btn:hover, .product__add-btn:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.product__delete-btn:active, .product__remouve-btn:active, .product__add-btn:active {
+  transform: scale(1);
+  color: #B3BAC1;
+  transition: 0.3s;
+}
+
+.product__title:hover {
+  color: #B3BAC1;
+  transition: 0.3s;
+}
+
+.product__title:active {
+  color: #122947;
+  transition: 0.3s;
+}
+
+.basket__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18vh 0 4vh 0;
+}
+
+.subtotal-wrapper {
+  display: flex;
+  gap: 3vw;
+  align-items: center;
+}
+
+.subtotal::before {
+  content: "Итого: ";
+}
+
+.subtotal::after {
+  content: " ₽";
+}
+
+.order-btn {
+  padding: 7px 27px;
+  color: #122947;
+  border: 2px solid #122947;
+  font-family: "raleway-medium";
+  font-size: 16px;
+  background-color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.order-btn:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #122947;
+  border: 2px solid fff;
+  transition: 0.4s;
+}
+
+.order-btn:active {
+  color: #122947;
+  border: 2px solid #122947;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+.basket__link {
+  font-family: "raleway-medium";
+  font-size: 15px;
+  text-decoration: underline;
+  transition: 0.4s;
+}
+
+.basket__link:hover {
+  color: #B3BAC1;
+  transition: 0.4s;
+}
+
+.basket__link:active {
+  color: #122947;
+  transition: 0.4s;
 }
