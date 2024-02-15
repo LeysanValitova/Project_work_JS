@@ -1,27 +1,20 @@
 
 setProductsInCart()
-// Показать модальное окно только 1 раз при входе на сайт
 function showModal() {
     let popup = document.getElementById('popup');
-popup.classList.add('open_popup');
-}
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-
-let isModalShown = localStorage.getItem('isModalShown');
-
-if (!isModalShown) {
-    setTimeout(function() {
-        
-        showModal()
-        localStorage.setItem('isModalShown', true);
-    }, 15000)
-}
-
-});
+    popup.classList.add('open_popup');
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    let isModalShown = JSON.parse(localStorage.getItem('isModalShown'));
+  
+    if (!isModalShown) {
+      setTimeout(function() {
+        showModal();
+        localStorage.setItem('isModalShown', JSON.stringify(true));
+      }, 15000);
+    }
+  });
 
 // Закрывать модальное окно при клике на крестик
 document.getElementById('popupClose').addEventListener('click', function() {
@@ -38,28 +31,30 @@ window.addEventListener('keydown', (e) => {
 })
 // Закрывать модальное окно при клике вне него
 
-// document.querySelector('#popup','.popup__box').addEventListener('click', event => {
-//     event._isClickWidthInModal = true;
-// });
-// document.querySelector('#popup').addEventListener('click', event => {
-// if (event._isClickWidthInModal) return;
-// event.currentTarget.classList.remove('open_popup');
-// })
-
-// Закрывать модальное окно при клике на кноаку добавить адрес
 document.getElementById('addAddress').addEventListener('click', function() {
     let popup = document.getElementById('popup');
 popup.classList.remove('open_popup');
 })
 
+// Закрывать модальное окно при клике на кноаку добавить адрес
+const popup = document.getElementsByClassName('popup')[0]
+const popup__box = document.getElementsByClassName('popup__box')[0]
+window.addEventListener('click', function(event) {
+    if (event.target === popup) {
+        popup.classList.remove('open_popup')
+    }
+});
+
+
+
 
 // карусель
 document.getElementById('next').addEventListener('click', function() {
-    document.querySelector('#slider').style.transform += 'translateX(-100%)';
+    document.querySelector('#slider').scrollLeft += 300;
   });
 
   document.getElementById('prev').addEventListener('click', function() {
-    document.querySelector('#slider').style.transform += 'translateX(100%)';
+    document.querySelector('#slider').scrollLeft -= 300;
   });
 
 
@@ -68,6 +63,8 @@ document.getElementById('next').addEventListener('click', function() {
   const basketСount = document.querySelector('.basket__count');
   basketСount.textContent = productsInCart.length;
   }
+
+//   document.querySelector('#slider').scrollLeft += 300;
 
 
 

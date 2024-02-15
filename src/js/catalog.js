@@ -31,11 +31,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Добавляем выбранный товар в корзину
       basket.push(product);
+      basketСount.textContent = basket.length;
+
+      // basketСount.textContent = productsInCart.length;
 
       // Сохраняем обновленное содержимое корзины в локальное хранилище
       localStorage.setItem("basket", JSON.stringify(basket));
+      // basketСount.textContent = productsInCart.length;
+
     });
   });
+
+
   const productsInCart = JSON.parse(localStorage.getItem('basket'));
   const basketСount = document.querySelector('.basket__count');
   basketСount.textContent = productsInCart.length;

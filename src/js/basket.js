@@ -52,10 +52,10 @@ function renderProductsBasket(arr) {
       let quantity = parseInt(quantityElement.textContent);
       quantity++;
       quantityElement.textContent = quantity;
-      priceElement.textContent = quantity * price;
+      priceElement.textContent = parseInt(quantity) * parseInt(price);
 
       // Пересчитываем общую сумму
-      totalSum += price;
+      totalSum += parseInt(price);
       totalPrice.textContent = totalSum;
     });
 
@@ -64,8 +64,8 @@ function renderProductsBasket(arr) {
       let quantity = parseInt(quantityElement.textContent);
       if (quantity > 0) {
         quantity--;
-        quantityElement.textContent = quantity;
-        priceElement.textContent = quantity * price;
+        quantityElement.textContent = parseInt(quantity);
+        priceElement.textContent = parseInt(quantity) * parseInt(price);
 
         // Пересчитываем общую сумму
         totalSum -= price;
@@ -82,7 +82,7 @@ function renderProductsBasket(arr) {
       localStorage.setItem('basket', JSON.stringify(updatedProducts));
 
       // Обновляем количество товаров в корзине
-      tuta.textContent = updatedProducts.length;
+      basketСount.textContent = updatedProducts.length;
     });
 
     const totalPrice = document.querySelector('.subtotal');

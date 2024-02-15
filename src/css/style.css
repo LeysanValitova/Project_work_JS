@@ -686,6 +686,10 @@ select {
   transition: 0.5s;
 }
 
+#slider {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "mplus1-medium";
   src: url("/public/fonts/MPLUS1p-Medium.ttf");

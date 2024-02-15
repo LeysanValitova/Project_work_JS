@@ -727,7 +727,10 @@ select {
     transition: .5s;
 }
 
-
+#slider {
+    scroll-behavior: smooth;
+    
+}
 
 
 
