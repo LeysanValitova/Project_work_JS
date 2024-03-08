@@ -13,7 +13,9 @@
     src: url('/public/fonts/Raleway-Medium.ttf')
 }
 
-
+body {
+    background-color: #F7F7F7;;
+}
 
 .nav_border-bottom {
     padding-top: 12vh;
@@ -191,4 +193,48 @@
 .card__subtitlee {
     font-family: 'mplus1-medium';
     font-size: 13px;
+}
+
+
+.show-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7vh;
+
+}
+.show-cards {
+    font-size: .9rem;
+    text-align: center;
+    padding-top: 5px;
+    font-family: 'mplus1-medium' ;
+    background-color: transparent;
+    color: #122947;
+    border: 2px solid #B3BAC1;
+    width: 141px;
+    height: 37px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.show-cards:hover{
+    background-color:#122947;
+    color: #fff;
+}
+
+.show-cards:active{
+    background-color:#fff;
+    color: #122947;
+}
+
+.none {
+    display: none;
+}
+
+.active {
+    background-color: #122947;
+    color: #FFF;
 }

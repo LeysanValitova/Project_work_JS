@@ -28,7 +28,11 @@ html {
   font-size: 18px;
 }
 
-header {
+body {
+  background-color: #F7F7F7;
+}
+
+.index-header {
   background-image: url("/public/images/header_bg.jpg");
   height: 650px;
   width: 100%;
@@ -85,7 +89,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(250, 250, 250, 0.6);
   z-index: 1000;
 }
 
@@ -702,6 +706,10 @@ select {
   font-family: "raleway-medium";
   src: url("/public/fonts/Raleway-Medium.ttf");
 }
+body {
+  background-color: #F7F7F7;
+}
+
 .nav_border-bottom {
   padding-top: 12vh;
   border-bottom: 1px solid rgb(219, 220, 224);
@@ -863,18 +871,167 @@ select {
   font-size: 13px;
 }
 
-@font-face {
+.show-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7vh;
+}
+
+.show-cards {
+  font-size: 0.9rem;
+  text-align: center;
+  padding-top: 5px;
   font-family: "mplus1-medium";
-  src: url("/public/fonts/MPLUS1p-Medium.ttf");
+  background-color: transparent;
+  color: #122947;
+  border: 2px solid #B3BAC1;
+  width: 141px;
+  height: 37px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition-duration: 0.4s;
 }
-@font-face {
-  font-family: "mplus1-regular";
-  src: url("/public/fonts/MPLUS1p-Regular.ttf");
+
+.show-cards:hover {
+  background-color: #122947;
+  color: #fff;
 }
-@font-face {
+
+.show-cards:active {
+  background-color: #fff;
+  color: #122947;
+}
+
+.none {
+  display: none;
+}
+
+.active {
+  background-color: #122947;
+  color: #FFF;
+}
+
+body {
+  background-color: #F7F7F7;
+}
+
+.card-product__container {
+  display: flex;
+  width: 85.65vw;
+  margin: 0 auto;
+  padding-top: 7vh;
+  color: #122947;
+}
+
+.card-product__img-container {
+  display: flex;
+  flex: 1.25;
+}
+
+.card-product__image {
+  width: 100%;
+  max-width: 600px;
+  max-height: 630px;
+}
+
+.card-product__description-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-product__name-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.card-product__name {
   font-family: "raleway-medium";
-  src: url("/public/fonts/Raleway-Medium.ttf");
+  font-size: 2rem;
 }
+
+.card-product__subtitile {
+  font-family: "mplus1-regular";
+  font-size: 16px;
+  color: #9A9DA0;
+}
+
+.card-product__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  margin-top: 4vh;
+  font-family: "mplus1-regular";
+  font-size: 16px;
+  color: #122947;
+  font-weight: 500;
+  max-width: 30vw;
+  padding-bottom: 4vh;
+  border-bottom: 2px solid #B3BAC1;
+}
+.card-product__text p {
+  max-width: 24vw;
+}
+
+.card-product__bottom {
+  font-family: "mplus1-medium";
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.card-product__volume {
+  font-size: 1rem;
+  line-height: 27.1px;
+}
+
+.card-product__footer {
+  display: flex;
+  gap: 4vw;
+}
+
+.card-product__price {
+  font-family: "mplus1-medium";
+  font-size: 26px;
+}
+
+.card-product__price::after {
+  content: " ₽";
+}
+
+.card-product__btn {
+  width: 214px;
+  height: 41px;
+  background-color: transparent;
+  color: #122947;
+  font-family: "mplus1-medium";
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.card-product__btn:hover {
+  background-color: #122947;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.card-product__btn:active {
+  background-color: #fff;
+  color: #122947;
+  transition: 0.3s;
+}
+
+.active {
+  background-color: #122947;
+  color: #FFF;
+}
+
 .basket__container {
   margin: 12vh 0;
   border: 2px solid #D1D1D1;
