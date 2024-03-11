@@ -14,8 +14,8 @@ let productsData = [];
 
 getProducts();
 cart.addEventListener('click', delProductBasket);
-cart.addEventListener('click', addProductBasket);
-cart.addEventListener('click', subtractOneProduct);
+cart.addEventListener('click', changeProductQuantity);
+// cart.addEventListener('click', subtractOneProduct);
 
 
 
@@ -80,55 +80,50 @@ function delProductBasket(event) {
     getProducts()
 }
 
-function addProductBasket(event) {
-    const targetButton = event.target.closest('.product__add-btn');
-    if (!targetButton) return;
-
-    const card = targetButton.closest('.product');
-    const id = card.dataset.productId;
-    const basket = getBasketLocalStorage();
-
-    basket.push(id);
-    setBasketLocalStorage(basket);
-
-    let count = 0;
-    basket.map(item => {
-        if (item === id) {
-            count++;
-        }
-    });
-
-    let quantityElement = document.querySelector('.product__quantityy');
-    quantityElement.textContent = count;
-
-    console.log(count)
-}
-
-function subtractOneProduct(event) {
-    const targetButton = event.target.closest('.product__remove-btn');
+function changeProductQuantity(event) {
+    const action = event.target.closest('.product__add-btn') ? 'add' : 'subtract';
+    const quantityElement = event.target.closest('.product').querySelector('.product__quantityy');
     
-    if (!targetButton) return;
-
-    const card = targetButton.closest('.product');
-    const id = card.dataset.productId;
-    const basket = getBasketLocalStorage();
-
-    // Удаляем только одно вхождение идентификатора из корзины
-    const index = basket.indexOf(id);
-    if (index !== -1) {
-        basket.splice(index, 1);
-        setBasketLocalStorage(basket);
-
-        let count = basket.filter(item => item === id).length; // Подсчет количества товаров в корзине
-        let quantityElement = card.querySelector('.product__quantityy');
-
-        if (quantityElement) {
-            quantityElement.textContent = count;
-        }
-        console.log(count);
+    let quantity = Number(quantityElement.dataset.quantity);
+    
+    if (action === 'add' && quantity < 10) {
+        quantity++;
+    } else if (action === 'subtract' && quantity > 1) {
+        quantity--;
     }
+    
+    quantityElement.textContent = quantity;
+    quantityElement.dataset.quantity = quantity;
 
+    calcPrice(event)
 }
+
+function calcPrice(event) {
+    const quantityElement = event.target.closest('.product').querySelector('.product__quantityy');
+    let quantity = Number(quantityElement.dataset.quantity);
+
+    const priceElement = event.target.closest('.product').querySelector('.product__price');
+    let price = Number(priceElement.dataset.price);
+
+
+    price = quantity * price;
+
+    priceElement.textContent = price;
+}
+
+function calcTotalSum() {
+    const prices = [...document.querySelectorAll('.product__price')];
+    
+    // const totalSum = prices.reduce((acc, price) => {
+        //     return acc + parseFloat(price.textContent);
+        // }, 0);
+        
+        // document.querySelector('.subtotal').textContent = totalSum
+        console.log(prices)
+        
+    }
+    
+    calcTotalSum();
 
 
 
@@ -150,15 +145,15 @@ function renderProductsBasket(arr) {
               </div>
             </div>
             <div class="product__quantity-wrapper">
-              <button class="product__remove-btn">
+              <button class="product__remove-btn" data-action="subtract">
                 <i class="fa-solid fa-minus fa-lg"></i>
               </button>
-              <div class="product__quantityy">1</div>
-              <button class="product__add-btn">
+              <div class="product__quantityy" data-quantity="1">1</div>
+              <button class="product__add-btn"  data-action="add">
                 <i class="fa-solid fa-plus fa-lg"></i>
               </button>
             </div>
-            <div class="product__price">${price}</div>
+            <div class="product__price" data-price="${price}">${price}</div>
             <button class="product__delete-btn">
               <i class="fa-solid fa-xmark fa-xl"></i>
             </button>

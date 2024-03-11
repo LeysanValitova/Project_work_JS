@@ -1,20 +1,17 @@
 
 setProductsInCart()
-function showModal() {
-    let popup = document.getElementById('popup');
-    popup.classList.add('open_popup');
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (!localStorage.getItem("modalShown")) {
+      showModal();
+      localStorage.setItem("modalShown", "true");
   }
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    let isModalShown = JSON.parse(localStorage.getItem('isModalShown'));
-  
-    if (!isModalShown) {
-      setTimeout(function() {
-        showModal();
-        localStorage.setItem('isModalShown', JSON.stringify(true));
-      }, 15000);
-    }
-  });
+});
+
+function showModal() {
+  let modal = document.querySelector("#popup");
+  modal.style.display = "block";
+}
 
 // Закрывать модальное окно при клике на крестик
 document.getElementById('popupClose').addEventListener('click', function() {
