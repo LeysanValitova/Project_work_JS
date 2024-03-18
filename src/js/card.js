@@ -1,4 +1,5 @@
 "use strict"
+import "../scss/style.scss"
 //==========================================
 import { ERROR_SERVER, PRODUCT_INFORMATION_NOT_FOUND } from './constants.js';
 import { 
@@ -106,7 +107,6 @@ function checkingActiveButtons(basket) {
 
 function renderInfoProduct(product) {
     const { id, img, title,subtitle, price, volume, descr } = product;
-    // const priceDiscount = price - ((price * discount) / 100);
     const productItem = 
         `
         <div class="card-product__container" data-product-id=${id}>
@@ -141,38 +141,3 @@ function renderInfoProduct(product) {
 }
 
 
-
-// // Рендер информации о товаре
-// function renderInfoProduct(product) {
-//     const { img, title, subtitle, price, volume, descr } = product;
-//     // const priceDiscount = price - ((price * discount) / 100);
-//     const productItem = 
-//         `      <div class="card-product__container">
-//         <div class="card-product__img-container">
-//           <img
-//             class="card-product__image"
-//             src="./public/images/${img}"
-//             alt="${title}"
-//           />
-//         </div>
-//         <div class="card-product__description-container">
-//           <div class="card-product__top">
-//             <div class="card-product__name-container">
-//               <div class="card-product__name">${title}</div>
-//               <div class="card-product__subtitile">${subtitle}</div>
-//             </div>
-//             <div class="card-product__text">
-//               <p>${descr}</p>
-//             </div>
-//           </div>
-//           <div class="card-product__bottom">
-//             <div class="card-product__volume">${volume}</div>
-//             <div class="card-product__footer">
-//               <div class="card-product__price">${price}</div>
-//               <button class="card-product__btn">В корзину</button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>`
-//     wrapper.insertAdjacentHTML('beforeend', productItem);
-// }

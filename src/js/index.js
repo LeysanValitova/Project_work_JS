@@ -1,17 +1,28 @@
+"use strict"
 
+import "../scss/style.scss"
+
+
+
+// =======================
 setProductsInCart()
 
-document.addEventListener("DOMContentLoaded", function() {
-  if (!localStorage.getItem("modalShown")) {
-      showModal();
-      localStorage.setItem("modalShown", "true");
-  }
-});
-
 function showModal() {
-  let modal = document.querySelector("#popup");
-  modal.style.display = "block";
+  const modal = document.getElementById('popup');
+  modal.classList.add('open_popup');
+  localStorage.setItem('modalShown', 'true');
 }
+
+function checkLocalStorage() {
+  if (localStorage.getItem('modalShown')) {
+      const modal = document.getElementById('popup');
+      modal.classList.remove('open_popup')
+  } else {
+      setTimeout(showModal, 5000);
+  }
+}
+
+checkLocalStorage();
 
 // Закрывать модальное окно при клике на крестик
 document.getElementById('popupClose').addEventListener('click', function() {
@@ -61,7 +72,7 @@ document.getElementById('next').addEventListener('click', function() {
   basketСount.textContent = productsInCart.length;
   }
 
-//   document.querySelector('#slider').scrollLeft += 300;
+
 
 
 

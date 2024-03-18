@@ -1,4 +1,5 @@
 "use strict"
+import "../scss/style.scss"
 //==========================================
 import { ERROR_SERVER, NO_ITEMS_CART } from './constants.js';
 import { 
@@ -12,10 +13,10 @@ const cart = document.querySelector('.product__list');
 let productsData = [];
 
 
+
 getProducts();
-cart.addEventListener('click', delProductBasket);
-cart.addEventListener('click', changeProductQuantity);
-// cart.addEventListener('click', subtractOneProduct);
+
+
 
 
 
@@ -63,7 +64,7 @@ function loadProductBasket(data) {
     }
 
     renderProductsBasket(findProducts);
-    // addProductBasket();
+
 }
 
 function delProductBasket(event) {
@@ -96,6 +97,7 @@ function changeProductQuantity(event) {
     quantityElement.dataset.quantity = quantity;
 
     calcPrice(event)
+    calcTotalSum()
 }
 
 function calcPrice(event) {
@@ -111,181 +113,61 @@ function calcPrice(event) {
     priceElement.textContent = price;
 }
 
-function calcTotalSum() {
-    const prices = [...document.querySelectorAll('.product__price')];
-    
-    // const totalSum = prices.reduce((acc, price) => {
-        //     return acc + parseFloat(price.textContent);
-        // }, 0);
-        
-        // document.querySelector('.subtotal').textContent = totalSum
-        console.log(prices)
-        
-    }
-    
-    calcTotalSum();
-
-
-
-
-
-
 function renderProductsBasket(arr) {
     arr.forEach(card => {
         const { id, img, title,subtitle, volume,  price } = card;
-        // const priceDiscount = price - ((price * discount) / 100);
 
         const cardItem = 
         `<div class="product" data-product-id="${id}">
             <div class="product__inform">
               <a class="product__img" href="#"><img src="../public/images/${img}" alt="product"/></a>
               <div class="product__title-wrapper">
-                <a href="#" class="product__title">${title}</a>
-                <div class="product__subtitle">${subtitle} ${volume}</div>
+              <a href="#" class="product__title">${title}</a>
+              <div class="product__subtitle">${subtitle} ${volume}</div>
               </div>
-            </div>
-            <div class="product__quantity-wrapper">
+              </div>
+              <div class="product__quantity-wrapper">
               <button class="product__remove-btn" data-action="subtract">
-                <i class="fa-solid fa-minus fa-lg"></i>
+              <i class="fa-solid fa-minus fa-lg"></i>
               </button>
               <div class="product__quantityy" data-quantity="1">1</div>
               <button class="product__add-btn"  data-action="add">
-                <i class="fa-solid fa-plus fa-lg"></i>
+              <i class="fa-solid fa-plus fa-lg"></i>
               </button>
-            </div>
-            <div class="product__price" data-price="${price}">${price}</div>
-            <button class="product__delete-btn">
+              </div>
+              <div class="product__price" data-price="${price}">${price}</div>
+              <button class="product__delete-btn">
               <i class="fa-solid fa-xmark fa-xl"></i>
-            </button>
-          </div>`;
+              </button>
+              </div>`;
+              
+              cart.insertAdjacentHTML('beforeend', cardItem);
+              
+            });
+        }
+        
+        
+        function calcTotalSum() {
+            setTimeout(() => {
+               const prices = [...document.querySelectorAll('.product__price')];
+                     
+               if (prices.length > 0) {
+                  const totalSum = prices.reduce((acc, price) => {
+                     return acc + parseFloat(price.textContent);
+                  }, 0);
+                          
+                  document.querySelector('.subtotal').textContent = totalSum;
+               } else {
+                  document.querySelector('.order-btn').style.display = 'none';
+                  document.querySelector('.subtotal').style.display = 'none';
+                  cart.textContent = NO_ITEMS_CART;
+                  cart.style.color = '#122947';
+                  cart.style.fontFamily = 'mplus1-regular';
+               }
+            }, 100);
+         }
+          
+          calcTotalSum();
 
-        cart.insertAdjacentHTML('beforeend', cardItem);
-    });
-}
-
-
-
-
-// const productsInCart = JSON.parse(localStorage.getItem('basket'));
-
-// const renderItem = (card) =>{
-//   const { id, image, title, subtitle, price } = card;
-
-//   return (
-//     `<div class="product" id="${id}">
-//     <div class="product__inform">
-//       <a class="product__img" href="#"><img src="${image}" alt="product"/></a>
-//       <div class="product__title-wrapper">
-//         <a href="#" class="product__title">${title}</a>
-//         <div class="product__subtitle">${subtitle}</div>
-//       </div>
-//     </div>
-//     <div class="product__quantity-wrapper">
-//       <button class="product__remove-btn">
-//         <i class="fa-solid fa-minus fa-lg"></i>
-//       </button>
-//       <div class="product__quantity">1</div>
-//       <button class="product__add-btn">
-//         <i class="fa-solid fa-plus fa-lg"></i>
-//       </button>
-//     </div>
-//     <div class="product__price">${price}</div>
-//     <button class="product__delete-btn">
-//       <i class="fa-solid fa-xmark fa-xl"></i>
-//     </button>
-//   </div>`
-//   )
-// }
-
-// const getProductCount = (card) => +card.price
-
-// const renderProductsBasket = (arr) => {
-//   const cart = document.querySelector('.product__list');
-//   let totalSum = 0
-    
-//   arr.forEach(card => {
-//         cart.insertAdjacentHTML('beforeend', renderItem(card)); 
-//         totalSum += getProductCount(card)
-//   })
-
-//   const totalPrice = document.querySelector('.subtotal');
-//   totalPrice.textContent = totalSum;
-// }
-
-// if (productsInCart) {
-//   renderProductsBasket(productsInCart);
-// }
-
-// const deleteButtons = document.getElementsByClassName('product__delete-btn')
-// const arrayDeleteBtns = [...deleteButtons]
-
-// arrayDeleteBtns.forEach(deleteBtn => {
-//   deleteBtn.addEventListener('click', function() {
-//     deleteProduct(this);
-//   });
-// });
-
-// function deleteProduct(btn) {
-//   const cart = document.querySelector('.product__list');
-//   const parentNode = btn.parentNode;
-//   const deletedId = parentNode.getAttribute('id');
-
-//   const filteredList = [...productsInCart].filter(item => item.id !== deletedId);
-//   localStorage.setItem('basket', JSON.stringify(filteredList));
-//   cart.textContent = null;
-
-//   renderProductsBasket(filteredList);
-// }
-
-
-// ______
-// function renderProductsBasket(arr) {
-
-//     const productElement = document.getElementById(id);
-//     const quantityElement = productElement.querySelector('.product__quantity');
-//     const priceElement = productElement.querySelector('.product__price');
-
-//     const addButton = productElement.querySelector('.product__add-btn');
-//     addButton.addEventListener('click', () => {
-//       let quantity = parseInt(quantityElement.textContent);
-//       quantity++;
-//       quantityElement.textContent = quantity;
-//       priceElement.textContent = parseInt(quantity) * parseInt(price);
-
-//       // Пересчитываем общую сумму
-//       totalSum += parseInt(price);
-//       totalPrice.textContent = totalSum;
-//     });
-
-//     const removeButton = productElement.querySelector('.product__remove-btn');
-//     removeButton.addEventListener('click', () => {
-//       let quantity = parseInt(quantityElement.textContent);
-//       if (quantity > 0) {
-//         quantity--;
-//         quantityElement.textContent = parseInt(quantity);
-//         priceElement.textContent = parseInt(quantity) * parseInt(price);
-
-//         // Пересчитываем общую сумму
-//         totalSum -= price;
-//         totalPrice.textContent = totalSum > 0 ? totalSum : 0;
-//       }
-//     });
-
-//     const deleteButton = productElement.querySelector('.product__delete-btn');
-//     deleteButton.addEventListener('click', () => {
-//       cart.removeChild(productElement); // Удаляем товар из корзины
-
-//       // Удаляем товар из локального хранилища
-//       const updatedProducts = arr.filter(product => product.id !== id);
-//       localStorage.setItem('basket', JSON.stringify(updatedProducts));
-
-//       // Обновляем количество товаров в корзине
-//       basketСount.textContent = updatedProducts.length;
-//     });
-
-//     const totalPrice = document.querySelector('.subtotal');
-//     totalPrice.textContent = totalSum;
-//     const basketСount = document.querySelector('.basket__count');
-//     basketСount.textContent = arr.length;
-//   });
-// }
+cart.addEventListener('click', delProductBasket);
+cart.addEventListener('click', changeProductQuantity);
